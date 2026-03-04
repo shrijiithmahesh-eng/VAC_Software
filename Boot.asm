@@ -12,4 +12,6 @@ mov al, 'a'     ; Load 'a'
 int 0x10        ; Print it
 
 mov al, 'c'     ; Load 'c'
-int 0x10        ; Print it
+int 0x10         ;print it
+times 510-($-$$) db 0   ; Fill with 0s until byte 510
+dw 0xAA55               ; The Magic Boot Signature (Bytes 511 and 512)
