@@ -1,13 +1,11 @@
 // Shedon OS - Driver Core v1.0
 // Author: Shrijiith ($12083USR)
 
-#include <system/rules.h>
 
 #define PIN_UP 0x01
 #define PIN_LEFT 0x02
 #define PIN_RIGHT 0x03
 #define PIN_PWR 0x04
-
 void init_vacuum_hardware() {
     // Check Rules.json for RAM limits before starting
     if (get_mem_usage() > 2048) {
