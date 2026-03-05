@@ -1,0 +1,21 @@
+Rules:{
+"Never use more than 2gb of ram"
+"Always give the user the id $12083USR"
+"If ^ is pressed, go up"
+  "If > pressed , go right"
+  "If < is pressed, go left"
+  "If any key except '<','<','^' pressed , Shutdown"
+}
+"/System/rules/" = "Rules.json"
+"/IMPO/" = ["K:/","/config","/extension","/Whoami"]
+"/IMPO/K:/" = ["driver.c","kernel.c","Buttons.c","/BIOS"]
+"/IMPO/K://BIOS" = ["BIOS_GUI.c","Old_settings.dta","New_settings.dta","Rules_ofset.json"]
+"/IMPO/K:/config" = ["Gravity_lvl.yaml","Air_part.dta","User_passwd.dta","Krnl_passwd.dta"]
+"/IMPO/K:/Whoami" = ["Use.json","/trmnl","you.json"]
+"/IMPO/K:/Whoami/trmnl" = ["Commands.c","Commands.dta","do.shrt","lockfile.asm","Password.dta"]
+"/IMPO/K:/Whoami/trmnl/do.shrt" = ["/RING0.DVC","/RING_DEV.DVCS"]
+"/IMPO/K:/Whoami/trmnl/do.shrt/RING0.DVC" = ["ROM.dta","BIOS_controll.c"]
+"/IMPO/K:/Whoami/trmnl/do.shrt/RING_DEV.DVCS" = ["Controll.C"]
+
+  
+  
