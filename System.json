@@ -11,13 +11,13 @@
   },
   "File_System": {
     "/System/rules/": "Rules.json",
-    "/IMPO/": ["K:/", "/config", "/extension", "/Whoami","/apps"],
-    "/IMPO/K:/": ["driver.c","driverlazer.c", "kernel.c", "Buttons.c", "/BIOS"],
-    "/IMPO/K:/BIOS/": ["BIOS_GUI.c", "Old_settings.dta", "New_settings.dta", "Rules_ofset.json"],
-    "/IMPO/K:/config/": ["Gravity_lvl.yaml", "Air_part.dta", "User_passwd.dta", "Krnl_passwd.dta"],
-    "/IMPO/K:/Whoami/": ["Use.json", "/trmnl", "you.json"],
+    "/IMPO/": ["Kernel/", "/config", "/extension", "/Whoami","/apps"],
+    "/IMPO/Kernel/": ["driver.c","driverlazer.c", "kernel.c", "Buttons.c", "/BIOS"],
+    "/IMPO/Kernel/BIOS/": ["BIOS_GUI.c", "Old_settings.dta", "New_settings.dta", "Rules_ofset.json"],
+    "/IMPO/Kernel/config/": ["Gravity_lvl.yaml", "Air_part.dta", "User_passwd.dta", "Krnl_passwd.dta"],
+    "/IMPO/Kernel/Whoami/": ["Use.json", "/trmnl", "you.json"],
     "/IMPO//apps": ["Software_updator.c"]
-    "/IMPO/K:/Whoami/trmnl/": ["Commands.c", "Commands.dta", "do.shrt", "lockfile.asm", "Password.dta"]
+    "/IMPO/Kernel/Whoami/trmnl/": ["Commands.c", "Commands.dta", "do.shrt", "lockfile.asm", "Password.dta"]
   }
 },
 "System_apps":{
