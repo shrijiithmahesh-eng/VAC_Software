@@ -13,7 +13,7 @@ int 0x10        ; Print it
 
 mov al, 'c'     ; Load 'c'
 int 0x10         ;print it
-; ... (After your 'Vac' and Loading Bar code)
+
 
 load_kernel:
     mov ah, 0x02    ; BIOS 'Read Disk' function
