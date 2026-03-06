@@ -1,6 +1,6 @@
 #!/bin/bash
 # --- VAC-SFTWARE One-Click Installer ---
-# Created by: Shrijiith Mahesh (Lead Architect)
+# Created by: Shrijiith Mahesh 
 
 echo "🚀 Initializing VAC Deployment Protocol..."
 sudo apt install git
