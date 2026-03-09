@@ -11,12 +11,13 @@
   },
   "File_System": {
     "/System/rules/": "Rules.json",
-    "/IMPO/": ["Kernel/", "/config", "/extension", "/Whoami","/apps","GUI/],
+    "/IMPO/": ["Kernel/", "/config", "/extension", "/Whoami","/apps","GUI/"],
     "/IMPO/Kernel/": ["driver.c","driverlazer.c", "kernel.c", "Buttons.c", "/BIOS","init.asm"],
     "/IMPO/Kernel/BIOS/": ["BIOS_GUI.c", "Old_settings.dta", "New_settings.dta", "Rules_ofset.json"],
     "/IMPO/Kernel/config/": ["Gravity_lvl.yaml", "Air_part.dta", "User_passwd.dta", "Krnl_passwd.dta"],
     "/IMPO/Kernel/Whoami/": ["Use.json", "/trmnl", "you.json"],
-    "/IMPO//apps": ["Software_updator.c"]
+    "/IMPO//apps": ["Software_updator.c"],
+    "/IMPO/GUI/": ["Login.asm","GUI1.c","GUI2.c"],
     "/IMPO/Kernel/Whoami/trmnl/": ["Commands.c", "Commands.dta", "do.shrt", "lockfile.asm", "Password.dta"]
   }
 },
