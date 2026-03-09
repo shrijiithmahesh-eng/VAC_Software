@@ -1,3 +1,5 @@
+;The login
+_start:
 section .data
     prompt db "🚀 [VAC-OS]: ENTER MASTER KEY: ", 0
     prompt_len equ $ - prompt
