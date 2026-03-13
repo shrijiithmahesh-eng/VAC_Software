@@ -1,15 +1,16 @@
 ;The login
 _start:
 section .data
-    prompt db "🚀 [VAC-OS]: ENTER MASTER KEY: ", 0
+    prompt db " [KERNEL]: Login ", 0
+    promt db "VAC OS"
     prompt_len equ $ - prompt
     
     ; THE HIGH-ENTROPY KEY
-    master_key db "pashguidhbvkm_777888_7*&EYFUHBDHC;", 0
+    master_key db "#######_####### #", 0
     key_len equ $ - master_key
-    
-    success_msg db 10, "✅ [ACCESS GRANTED]: Welcome, Architect Shrijiith.", 10, 0
-    fail_msg db 10, "🚨 [SECURITY BREACH]: ACCESS DENIED.", 10, 0
+; I hid the key , so the password isn't #########_######    
+    success_msg db 10, " [KERNEL]: WELCOME", 10, 0
+    fail_msg db 10, "[KERNEL]: ACCESS DENIED.", 10, 0
 
 section .bss
     input_buffer resb 64        ; Reserve space for the long password
