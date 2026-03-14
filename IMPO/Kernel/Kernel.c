@@ -4,12 +4,13 @@ void kmain() {
     clear_screen();
 
     // 2. Print the HackMe Welcome Message
-    print_string("VAC KERNEL V1.0 ONLINE\n");
+    print_string("loading systemesen to ram\n");
     // 3. The Big Jump: Load the JSON settings
     load_system_rules("System.json");
-    load_drivers1("driver.c")
-    load_join("Joiner.c")
-    load_driverlazer("driverlazer.c")
+    load_drivers1("driver.c");
+    load_join("Joiner.c");
+    load_driverlazer("driverlazer.c");
+    load_init("init.asm");
     // 4. Infinite Loop (Keep the system running)
     while(1) {
         // Stay alive!
