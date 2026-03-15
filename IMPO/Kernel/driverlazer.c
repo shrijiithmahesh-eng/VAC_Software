@@ -5,7 +5,7 @@ void fire_laser(int intensity) {
     // 1. Check RAM 
     if (check_ram() > RAM_MAX_MB) {
         log_event("BUFFER OVERFLOW");
-        system_shutdown("SECURITY BREACH: RAM LIMIT EXCEEDED");
+        system_shutdown(" RAM LIMIT EXCEEDED");
         return;
     }
 
@@ -18,4 +18,4 @@ void fire_laser(int intensity) {
     // 3. Execute the Melt
     send_signal(STEEL_CONTAINER_LINK, START_MELT);
     log_event("LASER_ACTIVE: MELTING_ICE");
-} // <--- Bracket closed! The wound is stitched!
+} //END
