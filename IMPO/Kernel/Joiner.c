@@ -1,8 +1,14 @@
-#include "/IMPO/GUI/"
-#include "/IMPO/ssh/"
-// Start the login
+#include "IMPO/GUI/Login.asm"
+#include "IMPO/ssh/connect.c"
+  
+// Declare external functions from other files
+extern void connect_init();    // from connect.c
+extern void patch_time();      // from time_patch.c
+extern void login_asm_start(); // from Login.asm
+
 void loader() {
-load_ssh("connect.c")
-load_ssh2("time_patch.c)
-load_login("Login.asm")
+    // These functions represent the "loading" of your logic
+    connect_init(); 
+    patch_time();
+    login_asm_start();
 }
