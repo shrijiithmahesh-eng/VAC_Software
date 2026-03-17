@@ -2,13 +2,16 @@
 #define RAM_MAX_MB 2048 // Back to the 2GB Rule!
 
 void fire_laser(int intensity) {
-    // 1. Check RAM 
-    if (check_ram() > RAM_MAX_MB) {
-        log_event("BUFFER OVERFLOW");
-        system_shutdown(" RAM LIMIT EXCEEDED");
+    // ... all your existing checks ...
+
+    // 4. Add a Heat Check
+    if (get_temperature(STEEL_CONTAINER_LINK) > 500) { // 500 Degrees?
+        log_event("THERMAL_OVERLOAD");
         return;
     }
 
+    send_signal(STEEL_CONTAINER_LINK, START_MELT);
+}
     // 2. Check Connection to the Steel Container
     if (!check_link(STEEL_CONTAINER_LINK)) {
         log_event("HARDWARE_DISCONNECT_ERROR");
