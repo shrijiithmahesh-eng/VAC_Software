@@ -46,7 +46,18 @@ _start:
     mov rsi, success_msg
     mov rdx, 52
     syscall
-    jmp .exit
+    jne .jump
+
+.jump:
+mov ah, 0x02    ; BIOS 'Read Disk' function
+    mov al, 3       ; Read 3 sector (The text editor)
+    mov ch, 0       ; Cylinder 0
+    mov dh, 0       ; Head 0
+    mov cl, 4      
+    mov bx, 0x2000  ; Memory address to drop the into the Text editor
+    mov es, bx
+    xor bx, bx
+    int 0x13        ; DISK INTERRUPT!
 
 .access_denied:
     mov rax, 1
