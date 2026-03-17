@@ -1,16 +1,22 @@
-#🌌 VAC_Software🌌
-Vac is a 6-friend Project, It is a device which can teriform mars
-The init system's name is based on systemd(linux's init system, and thank you linus)
-Use downloader.sh to install this repo.
-I(shrijiithmahesh) used asm and C to make this.
-credits:
-Me:shrijiithmahesh I will make the software and made this repo.
+# 🚀 VAC OS: Steel Container Edition
+### *Built by Addtion Group*
 
+> **"No GUI. No Mercy."**
+VAC OS is a mission-critical x86 kernel designed for **Mars Terraformation**. It is a 6-person collaboration focused on extreme hardware reliability and resource safety.
 
-Vishvaswar, Panveen And Vishnavi: They will make  the logic
+## 🛠️ Hardened Specifications
+* **Architecture:** x86 (Target: Lenovo Yoga 520-14IKB)
+* **Memory Safety:** Rule #1 - 2048MB Hard Limit.
+* **Input:** 3-Pin D-Pad Logic (Up/Left/Right).
+* **Security:** High-Entropy Key Gate (Login.asm).
 
+## 👥 The Addtion Group Squad
+* **Lead Architect:** Shrijiith Mahesh
+* **Hardware:** Nikeaten Gopinath
+* **Resources:** Vashnavi Gopalakrishan
+* **Security:** Danshik
+* **Communications:** Paveen
+* **Environment:** Vishwashwar
 
-Nikeaten: Will make the hardware.
-
-Danshik: will make the design
-
+---
+*License: GPL-3.0 - Open Source for the Future of Mars.*
