@@ -19,10 +19,6 @@ void kmain() {
     }
 }
 
-void load_driverlazer(char* filename) {
-    print_string("Initializing ram.. ");
-    // We map the Laser Driver to a specific high-memory address
-    ata_read_sectors(0x50000, 10, 20); 
     // 1. Load the Hardware Abstraction Layer
     // We place driver.c at 0x10000 (The 'Hand' Sector)
     load_driver("driver.c", 0x10000);
@@ -31,4 +27,5 @@ void load_driverlazer(char* filename) {
     // We place joiner.c at 0x20000 (The 'Synapse' Sector)
     load_join("joiner.c", 0x20000);
     print_string("kahaha Joiner.c has started..\n");
+    print_string("[OK]STARTED INIT SYSTEM.. STARTING LOGIN..")
 }
