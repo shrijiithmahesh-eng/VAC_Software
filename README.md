@@ -11,12 +11,10 @@ VAC OS is a mission-critical x86 kernel designed for **Mars Terraformation**. It
 * **Security:** High-Entropy Key Gate (Login.asm).
 
 ## 👥 The Addtion Group Squad
-* **Lead :** Shrijiith Mahesh
+* **software :** Shrijiith Mahesh
 * **Hardware:** Nikeaten Gopinath
-* **Resources:** Vashnavi Gopalakrishan
-* **Security:** Danshik
-* **Communications:** Paveen
-* **Environment:** Vishwashwar
+* **Bluprint:** Paveen,Danshik
+* **logic:** Vishwashwar, Viashnavi
 
 ---
 *License: GPL-3.0 - Open Source for the Future of Mars.*
