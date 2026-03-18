@@ -27,5 +27,5 @@ void kmain() {
     // We place joiner.c at 0x20000 (The 'Synapse' Sector)
     load_join("joiner.c", 0x20000);
     print_string("kahaha Joiner.c has started..\n");
-    print_string("[OK]STARTED INIT SYSTEM.. STARTING LOGIN..")
+    print_string("[OK]STARTED INIT SYSTEM.. STARTING LOGIN..");
 }
