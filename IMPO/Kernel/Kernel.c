@@ -3,7 +3,7 @@
  * Status: HIGH SECURITY / MARS TERRAFORMING READY
  */
 
-#include "stdint.h"
+#include <"stdint.h">
 
 // The "Golden Key" - This is the sum of all bytes in a perfect System.json
 // If the file changes by even 1 bit, this check will fail!
