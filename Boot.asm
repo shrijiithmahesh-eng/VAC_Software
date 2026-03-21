@@ -27,4 +27,6 @@ load_kernel:
     int 0x13        ; DISK INTERRUPT!
 
     jmp 0x1000:0000 ; THE JUMP TO THE KERNEL!
+times 510-($-$$) db 0  
+
 dw 0xAA55               ; The Magic Boot Signature (Bytes 511 and 512)
