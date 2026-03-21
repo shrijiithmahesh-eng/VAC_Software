@@ -1,0 +1,28 @@
+# THE YAML FILE OF VAC OS
+mission:
+  "Terraform Mars"
+
+definitions:
+  Mars:
+    description: "A planet in the solar system"
+    alias: "The Red Planet"
+    
+    # Target Data 
+    environmental_data:
+      gravity: 3.721           # m/s²
+      atmosphere: "CO2_HEAVY"
+      surface_temp: -60        # Celsius (Hardcore Cold)
+
+    transformation_goals:
+      - "Melt Polar Ice"
+      - "Thicken Atmosphere"
+      - "lauch SXSPERE103"
+Creators:
+  "shrijiith - software"
+  "shriram - LOgics"
+  "Nikeaten - hardware"
+  "Vishwashwar - Logic"
+  "Vishanvi - Logic"
+  "Paveen - Blueprint"
+  "Danshik - blueprint"
+  
