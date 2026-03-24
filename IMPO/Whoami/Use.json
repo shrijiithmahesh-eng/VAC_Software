@@ -1,8 +1,9 @@
 {
   "Air:" {
-    "- level": "Moniter.py"
+    "- level:" ["Moniter.py"]
     "type:" ["N2","O2","CO2"],
   },
   "Gravity:" {
-    "-level:"
-  
+  "-level:" ["Safely_garveity.py"]
+}
+}
