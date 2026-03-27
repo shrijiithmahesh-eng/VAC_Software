@@ -1,7 +1,3 @@
-// Shedon OS - Driver Core v1.0
-// Author: Shrijiith ($12083USR)
-
-
 #define PIN_UP 0x01
 #define PIN_LEFT 0x02
 #define PIN_RIGHT 0x03
@@ -13,11 +9,24 @@ void init_vacuum_hardware() {
     }
 }
 
+
 int read_input() {
-    int key = hardware_bus_read();
-    if (key == PIN_UP || key == PIN_LEFT || key == PIN_RIGHT) {
-        return key; // Valid input
-    } else {
-        system_shutdown(); // Rule: Any other key = Shutdown
+    int key = hardware_bus_read(); // Grab the hex from Port 0x60
+    
+    if (key == 0) {
+        return 0; // No key pressed, keep the loop spinning
+    }
+
+    // REMOVED: system_shutdown() on unknown keys.
+    // ADDED: Universal Return.
+    
+    return key; // Every key is now a "Valid Input"
+}
+
+void process_text() {
+    int key = read_input();
+    if (key != 0) {
+        // This is where you map the Hex to "Hello" 
+        printf("Key Pressed: 0x%02X\n", key); 
     }
 }
