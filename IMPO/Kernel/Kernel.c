@@ -19,7 +19,11 @@ void print_string(char* str) {
 }
 
 void drop_disk() {
-    print_string("\n[CRITICAL] ATTACK DETECTED. DROPPING DISK...");
+    print_string("\n [!!] FOUND FILES HAVE BEEN MESSED WITH, DOEXSHTHINKAI VOID OF NOTHINGNESS ");
+    asm volitile("
+    mov eax,[0x1000]
+    mov [0x9000], eax
+    ")
     outb(0x1F7, 0x08); // ATA Software Reset Command
     asm volatile("cli; hlt"); // Total System Lock
 }
