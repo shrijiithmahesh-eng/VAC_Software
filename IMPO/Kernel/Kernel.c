@@ -40,7 +40,7 @@ void kmain() {
     uint32_t* system_json = (uint32_t*)JSON_ADDR;
     
     if (verify_integrity(system_json, 128) != SYSTEM_JSON_CHECKSUM) {
-        print_string("INTEGRITY FAILURE: SYSTEM.JSON TAMPERED!\n");
+        print_string("DOMAIN EXPANSION: VOID OF DETRUCTION!\n");
         drop_disk();
     }
 
