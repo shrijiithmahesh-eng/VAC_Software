@@ -8,8 +8,7 @@
     "/IMPO/": ["Kernel/","/Whoami","GUI/","ssh/","WARN.1"],
     "/IMPO/ssh/": ["connect.c","readme.1","time_patch.c"],
     "/IMPO/Kernel/": ["driver.c","driverlazer.c", "kernel.c","init.asm"],
-      "/IMPO/Kernel/Whoami/": ["Use.json","Monitor.py","you.yaml"],
-    "/IMPO//apps": ["Software_updator.c"],
+    "/IMPO/Kernel/Whoami/": ["you.yaml"],
     "/IMPO/GUI/": ["Login.asm",],
     }
 },
