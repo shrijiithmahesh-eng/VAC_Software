@@ -11,8 +11,4 @@
     "/IMPO/Kernel/Whoami/": ["you.yaml"],
     "/IMPO/GUI/": ["Login.asm",],
     }
-},
-"System_apps":{
-  "Software_updater"
-  }
 }
