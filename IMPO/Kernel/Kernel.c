@@ -54,7 +54,7 @@ void kmain() {
     // Simulate reading Sector 5 (In a real kernel, you'd call an ATA driver)
     uint32_t* system_json = (uint32_t*)JSON_ADDR;
     
-    if (verify_integrity(system_json, 128) != SYSTEM_JSON_CHECKSUM) {
+    if (verify_integrity(system_json, 376) != SYSTEM_JSON_CHECKSUM) {
         print_string("DOMAIN EXPANSION: VOID OF DETRUCTION!\n");
         drop_disk();
     }
