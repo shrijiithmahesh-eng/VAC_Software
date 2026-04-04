@@ -3,7 +3,7 @@ void kmain() {
 
     // 1. Pull & Verify Rules (Sector 5)
     ata_read_sector(5, (uint16_t*)JSON_ADDR);
-    if (verify_integrity((uint32_t*)JSON_ADDR, 128) != SYSTEM_JSON_CHECKSUM) {
+    if (verify_integrity((uint32_t*)JSON_ADDR, 376) != SYSTEM_JSON_CHECKSUM) {
         drop_disk();
     }
 
