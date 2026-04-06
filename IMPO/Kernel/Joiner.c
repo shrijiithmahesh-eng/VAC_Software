@@ -1,6 +1,6 @@
 #include "IMPO/GUI/Login.asm"
 #include "IMPO/ssh/connect.c"
-  
+#include  "IMPO/ssh/time_patch.c"
 // Declare external functions from other files
 extern void connect_init();    // from connect.c
 extern void patch_time();      // from time_patch.c
