@@ -12,7 +12,7 @@ void kmain() {
     ata_read_sector(6, (uint16_t*)JOINER_ADDR);
     
     // We assume the Joiner has its own expected checksum (e.g., 0x55667788)
-    if (verify_integrity((uint32_t*)JOINER_ADDR, 128) != 0x55667788) {
+    if (verify_integrity((uint32_t*)JOINER_ADDR, 128) != 0x68953198) {
         print_string("\n [!!] JOINER CORRUPTION DETECTED ");
         drop_disk();
     }
