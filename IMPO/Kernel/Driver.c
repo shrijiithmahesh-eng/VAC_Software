@@ -2,14 +2,6 @@
 #define PIN_LEFT 0x02
 #define PIN_RIGHT 0x03
 #define PIN_PWR 0x04
-void init_vacuum_hardware() {
-    // Check Rules.json for RAM limits before starting
-    if (get_mem_usage() > 2048) {
-        system_shutdown(); // Rule #1 Enforcement
-    }
-}
-
-
 int read_input() {
     int key = hardware_bus_read(); // Grab the hex from Port 0x60
     
@@ -25,8 +17,17 @@ int read_input() {
 
 void process_text() {
     int key = read_input();
-    if (key != 0) {
-        // This is where you map the Hex to "Hello" 
-        printf("Key Pressed: 0x%02X\n", key); 
+    if (key == 0) return;
+
+    switch(key) {
+        case PIN_UP:
+            print_string("THRUSTERS: FORWARD\n");
+            break;
+        case PIN_PWR:
+            print_string("VAC OS: ENTERING STANDBY\n");
+            break;
+        default:
+            // The Universal Return at work:
+            print_string("LOG: Unmapped Telemetry 0x%02X\n", key);
     }
 }
