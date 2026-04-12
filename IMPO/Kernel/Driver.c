@@ -22,7 +22,6 @@ void process_text() {
     switch(key) {
         case PIN_UP:
             print_string("THRUSTERS: FORWARD\n");
-            break;
         case PIN_PWR:
             print_string("VAC OS: ENTERING STANDBY\n");
             break;
