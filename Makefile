@@ -1,4 +1,3 @@
-cat << 'EOF' > Makefile
 AS = nasm CC = gcc LD = ld
 
 ASFLAGS = -f bin CCFLAGS = -m32 -ffreestanding -fno-pie -nostdlib -O2 LDFLAGS = -m elf_i386 -Ttext 0x1000 --oformat binary
