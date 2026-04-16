@@ -15,31 +15,39 @@ start_evasion:
     ret
 
 emergency_stop:
-    ; This is the "End of the Line" code
-    cli
-    mov al, 0xFF            ; Send a "Critical Failure" signal to all ports
-    int, 0X0E
+    cli                     ; Stop all interrupts
+    mov al, 0xFF            ; Diagnostic port signal
+    out 0x80, al
+
+    ; --- BIOS Print "this the end" ---
+    mov ah, 0x0E            ; BIOS Teletype function
+    
     mov al, 't'
-    int 0x13
+    int 0x10                ; Print 't'
     mov al, 'h'
-    int 0x13
+    int 0x10                ; Print 'h'
     mov al, 'i'
-    int 0x13
+    int 0x10
     mov al, 's'
-    int 0x13
+    int 0x10
+    mov al, ' '             ; Space character
+    int 0x10
     mov al, 't'
-    int 0x13
+    int 0x10
     mov al, 'h'
-    int 0x13
+    int 0x10
     mov al, 'e'
-    int 0x13
+    int 0x10
+    mov al, ' '
+    int 0x10
     mov al, 'e'
-    int 0x13
+    int 0x10
     mov al, 'n'
-    int 0x13
+    int 0x10
     mov al, 'd'
-    int 0x13
-    hlt
+    int 0x10
+
+    hlt                     ; Final system halt. Mission Over.
 PROXIMITY_THRESHOLD equ 92
 ; 0.333 seconds = 333 milliseconds. 
 ; So, Burn Time (ms) = (92 - distance) * 333
