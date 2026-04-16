@@ -1,41 +1,37 @@
-
-
 ; VAC OS: FINAL TORNADO EVASION INTEGRATION
-; Input: EAX = Distance from tornado center
+; Input: EAX = Distance (cm)
 
 PROXIMITY_THRESHOLD equ 92
-DURATION_MULTIPLIER equ 10
+; 0.333 seconds = 333 milliseconds. 
+; So, Burn Time (ms) = (92 - distance) * 333
+MS_MULTIPLIER       equ 333 
 THRUSTER_PORT       equ 0x3F
-THRUSTER_ENGAGE     equ 0x01
 
-check_vortex_proximity:
-    test eax, eax
-    jz   emergency_stop
-    cmp  eax, PROXIMITY_THRESHOLD
-    jle  start_evasion
-    ret
-
-start_evasion:
-    call calculate_thrust_duration  ; Result returned in EBX
-    call execute_thrust             ; EBX = burn duration
-    ret
-
-; Input:  EAX = current distance from tornado center
-; Output: EBX = calculated burn duration (ticks)
 calculate_thrust_duration:
     mov  ebx, PROXIMITY_THRESHOLD
-    sub  ebx, eax
-    imul ebx, DURATION_MULTIPLIER
-    ret                             ; EBX = burn time
+    sub  ebx, eax           ; EBX = distance delta in cm
+    imul ebx, MS_MULTIPLIER ; EBX = total burn time in MILLISECONDS
+    ret
 
-; Input: EBX = burn duration
 execute_thrust:
-    cli                     ; Minimize interrupt-disabled window
+    cli
     mov  dx, THRUSTER_PORT
-    mov  al, THRUSTER_ENGAGE
-    out  dx, al
-    sti
+    mov  al, 0x01
+    out  dx, al             ; THRUSTERS ON
 
-    ; TODO (Vishwashwar/Shriram): implement delay loop using EBX here
-    ; EBX holds burn duration in ticks — do NOT clobber it before the loop
+    ; Now we need a delay loop that accurately waits 1ms per EBX unit
+.wait_ms:
+    push ebx
+    mov  ecx, 2500000       ; CALIBRATION: Adjust this for your Yoga 520 (2.5GHz-ish)
+.inner_loop:
+    dec  ecx
+    jnz  .inner_loop        ; This loop should take exactly 1ms
+    pop  ebx
+    
+    dec  ebx
+    jnz  .wait_ms           ; Repeat for every millisecond in EBX
+
+    mov  al, 0x00
+    out  dx, al             ; THRUSTERS OFF
+    sti
     ret
