@@ -1,6 +1,45 @@
 ; VAC OS: FINAL TORNADO EVASION INTEGRATION
 ; Input: EAX = Distance (cm)
+; --- ADD THIS BACK AT THE TOP ---
+check_vortex_proximity:
+    test eax, eax           ; Check if distance is 0
+    jz   emergency_stop     ; If distance is 0, the tornado is ON TOP of us!
+    
+    cmp  eax, PROXIMITY_THRESHOLD
+    jle  start_evasion      ; If <= 92cm, start the math
+    ret                     ; Otherwise, we are safe (for now)
 
+start_evasion:
+    call calculate_thrust_duration
+    call execute_thrust
+    ret
+
+emergency_stop:
+    ; This is the "End of the Line" code
+    cli
+    mov al, 0xFF            ; Send a "Critical Failure" signal to all ports
+    int, 0X0E
+    mov al, 't'
+    int 0x13
+    mov al, 'h'
+    int 0x13
+    mov al, 'i'
+    int 0x13
+    mov al, 's'
+    int 0x13
+    mov al, 't'
+    int 0x13
+    mov al, 'h'
+    int 0x13
+    mov al, 'e'
+    int 0x13
+    mov al, 'e'
+    int 0x13
+    mov al, 'n'
+    int 0x13
+    mov al, 'd'
+    int 0x13
+    hlt
 PROXIMITY_THRESHOLD equ 92
 ; 0.333 seconds = 333 milliseconds. 
 ; So, Burn Time (ms) = (92 - distance) * 333
